@@ -4,7 +4,7 @@ public class Worker extends Person
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "Worker{" +
                 super.toString() +
                 " hourlyPayRate=" + hourlyPayRate +
                 "}";
@@ -41,7 +41,7 @@ public class Worker extends Person
     {
         if (hoursWorked > 40.0)
         {
-            return "Weekly Pay: " + calcWeeklyPay(40.0) + "and Over Time: " + (calcWeeklyPay(hoursWorked) - calcWeeklyPay(40.0));
+            return "Weekly Pay: " + calcWeeklyPay(40.0) + " and Over Time: " + (calcWeeklyPay(hoursWorked) - calcWeeklyPay(40.0));
         }
         else
         {

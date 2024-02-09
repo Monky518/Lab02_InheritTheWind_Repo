@@ -4,37 +4,51 @@ public class Main {
 
     public static void main(String[] args)
     {
-        ArrayList<Person> folks = new ArrayList<>();    // set array
-        Person sally = new Person("Sally", "Williams", 2005);   // add person(sally)
-        System.out.println(sally);  // show person(sally)
-        folks.add(sally);   // add person(sally) data to folks array
-        sally.setLastName("Smith"); // change person(sally) last name   note: folks *is* updated
-        System.out.println(sally);  // show updated person(sally)
+        // Create 3 workers and 3 salaryWorker instances and add them to an ArrayList<Worker>
+        // Pick reasonable hourly rates for the workers and reasonable salary rates for the salary workers
+        // Of course all workers have names, ids, and YOBs.
 
-        Person fred = new Person("Fred", "Williams", 2010); // add person(fred)
-        System.out.println(fred);   // show person(fred)
-        folks.add(fred);    // add person(fred) data to folks array
+        // Write a loop that simulates 3 weekly pay periods
+        // Week 1 is a 40-hour week
+        // For week 2, assume it is crunch time and everyone worked 50 hours
+        // Week 3 is back to normal with 40 hours
+        // Generate a display showing the weekly pay for each of the workers for each week in a reasonable tabular format
 
-        Person homer = new Person("Homer", "Simpson", 1975);    // add person(homer)
-        System.out.println(homer);  // show person(homer)
-        folks.add(homer);   // add person(homer) data to folks array
+        ArrayList<Worker> employees = new ArrayList<>();
 
-        for(Person p: folks)
-            System.out.println(p);
+        Worker emily = new Worker("000001", "Emily", "Kill", 1990, 21.5);
+        employees.add(emily);
+        Worker john = new Worker("000002", "John", "Smith", 2001, 17.3);
+        employees.add(john);
+        Worker sarah = new Worker("000003", "Sarah", "Rose", 1975, 26.2);
+        employees.add(sarah);
 
-        System.out.println("\n\nNew Code for inheritance");
+        SalaryWorker sam = new SalaryWorker("000005", "Sam", "Kill", 1990, 0.0, 60000.1);
+        employees.add(sam);
+        SalaryWorker jack = new SalaryWorker("000006", "Jack", "Vent", 1983, 0.0, 58656.0);
+        employees.add(jack);
+        SalaryWorker sky = new SalaryWorker("000007", "Sky", "Kill", 1990, 0.0, 65010.5);
+        employees.add(sky);
 
-        Student lisa = new Student("00000002", "Lisa", "Simpson", 1985, 3); // add student data
-        Student fredStudent = new Student(fred, 8); // add student data based on person first name
+        System.out.println("   Week One   \n==============\n");
 
-        System.out.println(lisa);
-        System.out.println(fredStudent);
+        for (Worker worker : employees)
+        {
+            System.out.println(worker + ": " + worker.displayWeeklyPay(40));
+        }
 
-        System.out.println("\nFile Storage formats:");
+        System.out.println("\n   Week Two   \n==============\n");
 
-        System.out.println("JSON: " + sally.toJSONRecord());
-        System.out.println("XML:  " + sally.toXMLRecord());
-        System.out.println("CSV:  "+ sally.toCSVRecord());
+        for (Worker worker : employees)
+        {
+            System.out.println(worker + ": " + worker.displayWeeklyPay(50));
+        }
 
+        System.out.println("\n  Week Three  \n==============\n");
+
+        for (Worker worker : employees)
+        {
+            System.out.println(worker + ": " + worker.displayWeeklyPay(40));
+        }
     }
 }
