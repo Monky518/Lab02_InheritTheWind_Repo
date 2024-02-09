@@ -10,17 +10,18 @@ public class Worker extends Person
                 "}";
     }
 
-    public Worker(String IDNum, String firstName, String lastName, int YOB, double hourlyPayRate)  // add data
+    public Worker(String IDNum, String firstName, String lastName, String title, int YOB, double hourlyPayRate)
     {
-        super(IDNum, firstName, lastName, YOB);
+        super(IDNum, firstName, lastName, title, YOB);
         this.hourlyPayRate = hourlyPayRate;
     }
 
-    public Worker(Person person, double hourlyPayRate) // add student data with person data based on first name
+    public Worker(Person person, double hourlyPayRate)
     {
         super(person.getIDNum(),
                 person.getFirstName(),
                 person.getLastName(),
+                person.getTitle(),
                 person.getYOB());
         this.hourlyPayRate = hourlyPayRate;
     }

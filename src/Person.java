@@ -1,41 +1,45 @@
 import java.time.Year;
-import java.util.Objects;
 
 public class Person
 {
     private String IDNum;
     private String firstName;
     private String lastName;
-    private String title;       // add this everywhere later
+    private String title;
     private int YOB;
     static private int IDSeed =  1;
 
-    public static void setIDSeed(int IDSeed) {
+    public static void setIDSeed(int IDSeed)
+    {
         Person.IDSeed = IDSeed;
     }
 
-    public static int getIDSeed() {
+    public static int getIDSeed()
+    {
         return IDSeed;
     }
 
-    public Person(String IDNum, String firstName, String lastName, int YOB) // add data
+    public Person(String IDNum, String firstName, String lastName, String title, int YOB)
     {
         this.IDNum = IDNum;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.title = title;
         this.YOB = YOB;
     }
 
-    public Person(String firstName, String lastName, int YOB)   // add data with generated ID
+    public Person(String firstName, String lastName, String title, int YOB)
     {
         this.IDNum = this.genIDNum();
         this.firstName = firstName;
         this.lastName = lastName;
+        this.title = title;
         this.YOB = YOB;
     }
 
 
-    public String getIDNum() {
+    public String getIDNum()
+    {
         return IDNum;
     }
 
@@ -71,31 +75,43 @@ public class Person
         return Year.now().getValue() - year;
     }
 
-    public void setIDNum(String IDNum) {
+    public String getTitle()
+    {
+        return title;
+    }
+
+    public void setIDNum(String IDNum)
+    {
         this.IDNum = IDNum;
     }
 
-    public String getFirstName() {
+    public String getFirstName()
+    {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName)
+    {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
+    public String getLastName()
+    {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName)
+    {
         this.lastName = lastName;
     }
 
-    public int getYOB() {
+    public int getYOB()
+    {
         return YOB;
     }
 
-    public void setYOB(int YOB) {
+    public void setYOB(int YOB)
+    {
         this.YOB = YOB;
     }
 
@@ -120,7 +136,7 @@ public class Person
     public String toJSONRecord()
     {
         String retString = "";
-        char DQ = '\u0022';  // Assign the double quote char to a variable
+        char DQ = '\u0022';
         retString =  "{" + DQ + "IDNum" + DQ + ":" + DQ + this.IDNum + DQ + ",";
         retString += DQ + "firstName" + DQ + ":" + DQ + this.firstName + DQ + ",";
         retString += " " + DQ + "lastName"  + DQ + ":" + DQ + this.lastName + DQ + ",";

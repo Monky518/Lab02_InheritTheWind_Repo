@@ -16,18 +16,18 @@ public class Main {
 
         ArrayList<Worker> employees = new ArrayList<>();
 
-        Worker emily = new Worker("000001", "Emily", "Kill", 1990, 21.5);
+        Worker emily = new Worker("000001", "Emily", "Kill", "Mrs.", 1990, 21.5);
         employees.add(emily);
-        Worker john = new Worker("000002", "John", "Smith", 2001, 17.3);
+        Worker john = new Worker("000002", "John", "Smith", "Mr.", 2001, 17.3);
         employees.add(john);
-        Worker sarah = new Worker("000003", "Sarah", "Rose", 1975, 26.2);
+        Worker sarah = new Worker("000003", "Sarah", "Rose", "Ms.", 1975, 26.2);
         employees.add(sarah);
 
-        SalaryWorker sam = new SalaryWorker("000005", "Sam", "Kill", 1990, 0.0, 60000.1);
+        SalaryWorker sam = new SalaryWorker("000005", "Sam", "Kill","Mrs.", 1990, 0.0, 60000.1);
         employees.add(sam);
-        SalaryWorker jack = new SalaryWorker("000006", "Jack", "Vent", 1983, 0.0, 58656.0);
+        SalaryWorker jack = new SalaryWorker("000006", "Jack", "Vent", "Mr.", 1983, 0.0, 58656.0);
         employees.add(jack);
-        SalaryWorker sky = new SalaryWorker("000007", "Sky", "Kill", 1990, 0.0, 65010.5);
+        SalaryWorker sky = new SalaryWorker("000007", "Sky", "Kill", "Dr.", 1990, 0.0, 65010.5);
         employees.add(sky);
 
         System.out.println("   Week One   \n==============\n");

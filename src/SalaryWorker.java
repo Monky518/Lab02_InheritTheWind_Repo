@@ -10,9 +10,9 @@ public class SalaryWorker extends Worker
                 "}";
     }
 
-    public SalaryWorker(String IDNum, String firstName, String lastName, int YOB, double hourlyPayRate, double annualSalary)  // add data
+    public SalaryWorker(String IDNum, String firstName, String lastName, String title, int YOB, double hourlyPayRate, double annualSalary)
     {
-        super(IDNum, firstName, lastName, YOB, hourlyPayRate);
+        super(IDNum, firstName, lastName, title, YOB, hourlyPayRate);
         this.annualSalary = annualSalary;
     }
 
